@@ -3,7 +3,7 @@ terraform {
       resource_group_name  = "RateMyBeer_Infrastructure"
       storage_account_name = "ratemybeerstorage"
       container_name       = "terraformstate"
-      key                  = "trichling.4719.meinapetitocluster.tfstate"
+      key                  = "trichling.4719.ratemybeercluster.tfstate"
     }
 
     required_providers {
