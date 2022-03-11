@@ -124,6 +124,11 @@ resource "helm_release" "nginx_ingress" {
     value = azurerm_public_ip.RateMyBeerClusterIngressPublicIp.ip_address
   }
 
+  set {
+    name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/azure-load-balancer-resource-group"
+    value = data.azurerm_resource_group.RateMyBeerMCRessourceGroup.name
+  }
+
   # --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"=$DNS_LABEL `
   # set {
   #   name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/azure-dns-label-name"
